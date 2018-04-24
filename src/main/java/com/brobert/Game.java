@@ -122,10 +122,11 @@ public abstract class Game {
 
 
 
-	public void computerTurn(ComputerPlayer player) {
+	public void computerTurn(ComputerPlayer player, Token computer) {
 		Coordinate computerPlay = player.play(getBoard());
-		getBoard().placePiece(computerPlay.x, computerPlay.y, getComputer());
-		printTurn(getComputer(), computerPlay);
+		System.out.println(computerPlay);
+		getBoard().placePiece(computerPlay.x, computerPlay.y, computer);
+		printTurn(computer, computerPlay);
 		turns++;
 	}
 }
